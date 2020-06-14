@@ -39,7 +39,7 @@ const main = async () => {
         const input = document.getElementById('input-name')
         const cached = memoize(matchName)
 
-        const pokemon = res.results.filter(result => cached([result.name, filter.name]))
+        const pokemon = res.results.filter(result => cached([result.name.toLowerCase(), filter.name.toLowerCase()]))
 
         input.value = ""
         list.list = pokemon
